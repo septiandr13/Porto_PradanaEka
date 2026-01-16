@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-50;
+}
+
+.glass-card {
+  @apply bg-white/70 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200/70 dark:border-slate-700/60 shadow-glow;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium bg-gradient-to-r from-brand-500 to-cyan-400 text-white hover:shadow-glow transition-transform transform hover:-translate-y-0.5 hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50 dark:focus-visible:ring-offset-slate-950;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium border border-slate-200/80 text-slate-900 hover:bg-slate-100/80 hover:border-slate-400/80 transition-transform transform hover:-translate-y-0.5 hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50 dark:border-slate-700/70 dark:text-slate-100 dark:hover:bg-slate-800/60 dark:hover:border-slate-500/80 dark:focus-visible:ring-offset-slate-950;
+}
+
+.section-title {
+  @apply text-xl md:text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-50 mb-2;
+}
+
+.section-subtitle {
+  @apply text-sm text-slate-500 dark:text-slate-400 mb-6;
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(24px);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  animation-name: float-parallax;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.floating-shape:nth-child(1) {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(93, 91, 255, 0.75), transparent 60%);
+  top: -40px;
+  left: -40px;
+  animation-duration: 22s;
+}
+
+.floating-shape:nth-child(2) {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.6), transparent 60%);
+  bottom: -60px;
+  right: -60px;
+  animation-duration: 26s;
+}
+
+.floating-shape:nth-child(3) {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(190, 242, 100, 0.45), transparent 60%);
+  top: 50%;
+  left: 65%;
+  animation-duration: 30s;
+}
+
+@keyframes float-parallax {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-10px, -20px, 0) scale(1.03);
+  }
+  100% {
+    transform: translate3d(12px, 16px, 0) scale(1.06);
+  }
+}
