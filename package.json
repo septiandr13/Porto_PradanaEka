@@ -6,6 +6,7 @@
   "scripts": {
   "dev": "vite",
   "build": "npx vite build",
+  "postinstall": "chmod -R +x node_modules/.bin",
   "preview": "vite preview",
   "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
